@@ -105,3 +105,4 @@ library(gridExtra)
 library(grid)
 
 grid.arrange(div_plot, rich_plot, ncol=2)
+
