@@ -30,16 +30,16 @@ acc_burigi   <- ctdat2_burigi %>%
   summarize(n = sum(count))
 
 #factorize species as it is a categorical variable
-acc_burigi$species <- as.factor(acc_burigi$species)
+acc_burigi$species <- as.factor(acc_burigi$species) #convert to factor
 
 #remove unused species levels
-acc_burigi$species <- droplevels(acc_burigi$species)
+acc_burigi$species <- droplevels(acc_burigi$species) #remove unused species levels
 
 #order by date
-acc_burigi <- acc_burigi[order(as.Date(acc_burigi$date,format = "%d/%m/%Y")),]
+acc_burigi <- acc_burigi[order(as.Date(acc_burigi$date,format = "%d/%m/%Y")),] #order by date
 
 #pivot wider
-acc_burigi.w <- acc_burigi %>%  pivot_wider(names_from = "species", values_from = "n",values_fill = 0)
+acc_burigi.w <- acc_burigi %>%  pivot_wider(names_from = "species", values_from = "n",values_fill = 0) #pivot wider
 
 #convert to dataframe
 acc_burigi.w<- as.data.frame(acc_burigi.w[,2:(ncol(acc_burigi.w))])
