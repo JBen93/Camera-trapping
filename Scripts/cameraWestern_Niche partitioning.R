@@ -35,7 +35,7 @@ ct_sum <- ctdata3 %>%
 ct_sum
 
 
-# 2-d projections of 4 niche species
+# 2-d projections of 4 niche species- bayesian model
 nsamples <- 500
 herb.par <- tapply(1:nrow(ct_sum), ct_sum$species,
                    function(ii) niw.post(nsamples = nsamples, X = ct_sum[ii,3]))
