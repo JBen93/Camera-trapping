@@ -73,3 +73,4 @@ over.stat <- overlap(fish.par, nreps = nsamples, nprob = nsamples, alpha = .95)
 overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise",
              equal.axis = TRUE,
              xlab = "Overlap Probability (%) -- Niche Region Size: 95%")
+
