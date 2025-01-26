@@ -19,9 +19,6 @@ library(plotly)
 library(ggpmisc)
 library(nicheROVER)
 
-# check/set working directory
-
-getwd()
 
 # Part 1 - Diversity Indices ----------------------------------------------
 # Relative Abundance Index ------------------------------------------------
@@ -32,19 +29,23 @@ MTZ18 <- read_csv("MTZ_Jan-Dec2018.csv")
 MTZ19 <- read_csv("MTZ_Jan-Dec2019.csv")
 
 # calculate weighted counts for 2018 (relative abundance for 2018=CT_18)
+#richness
+unique(MTZ18$species)
+unique(MTZ19$species)
 
 MTZ_18_calc <- 
   MTZ18 %>% 
-  count(species, count) %>% 
-  mutate(per = count * n) %>% 
-  select(species, per) %>% 
-  group_by(species) %>% 
-  tally(per) %>% 
-  rename(CT_18 = n)
+  count(species, count) %>% # count the number of individuals per species
+  mutate(per = count * n) %>% # calculate the weighted counts
+  select(species, per) %>% # select the species and the weighted counts
+  group_by(species) %>% # group by species
+  tally(per) %>% # calculate the total weighted counts per species
+  rename(CT_18 = n) # rename the column
+
 
 #Checklist for 2018
 ggplot(
-  data = CT,
+  data = MTZ_18_calc,
   mapping = aes(x = CT_18, 
                 y = species)) +
   geom_col()
@@ -61,7 +62,7 @@ MTZ_19_calc <-
 
 #Checklist for 2019
 ggplot(
-  data = CT,
+  data =MTZ_19_calc ,
   mapping = aes(x = CT_19, 
                 y = species)) +
   geom_col()
