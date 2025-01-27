@@ -4,6 +4,7 @@ rm(list = ls()) # Clean R's brain
 # First set the working directory
 setwd("/Users/Joshua/Library/CloudStorage/OneDrive-UniversityofFlorida/R input")
 
+
 #Install secr package to be used for this analysis
 
 library(secr)
