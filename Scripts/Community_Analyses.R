@@ -3,8 +3,6 @@
 #################################################
 #set working directory
 
-setwd("/Users/Joshua/Library/CloudStorage/OneDrive-UniversityofFlorida/R input")
-
 # Load libraries
 
 # setup -------------------------------------------------------------------
