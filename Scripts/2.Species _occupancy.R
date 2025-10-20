@@ -3,6 +3,7 @@ rm(list=ls())
 
 # First set the working directory
 setwd("/Users/Joshua/Library/CloudStorage/OneDrive-UniversityofFlorida/R input")
+renv::restore()
 # Load libraries
 library(readr)
 library(unmarked)
@@ -173,3 +174,4 @@ plot2a
 
 
 ggsave("occ_Rainfall_TRCO_10-07-2023.tiff")
+
