@@ -1,6 +1,14 @@
 # Niche Partitioning ---------------------------------------------
+# clear everything in memory
+rm(list=ls())
 
-remove(list=ls())
+# First set the working directory
+setwd("/Users/Joshua/Library/CloudStorage/OneDrive-UniversityofFlorida/R input")
+
+# Restore environment (if using renv)
+renv::restore()
+
+# Load libraries
 library(tidyverse)
 library(vegan)
 library(multcomp)
