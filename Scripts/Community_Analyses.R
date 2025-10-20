@@ -1,7 +1,14 @@
 #################################################
 ### Community Analyses:Richness, Relative Abundance Index, & Capture Rate ###
 #################################################
-#set working directory
+# clear everything in memory
+rm(list=ls())
+
+# First set the working directory
+setwd("/Users/Joshua/Library/CloudStorage/OneDrive-UniversityofFlorida/R input")
+
+# Restore environment (if using renv)
+renv::restore()
 
 # Load libraries
 
@@ -134,3 +141,4 @@ RAI_graph <-
 # view
 
 RAI_graph
+
